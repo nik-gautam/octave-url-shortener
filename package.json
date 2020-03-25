@@ -1,0 +1,34 @@
+{
+  "name": "octave-url",
+  "version": "1.0.0",
+  "description": "URL shortener",
+  "main": "server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev:server": "nodemon server.js --exec babel-node --ignore client",
+    "dev:client": "npm start --prefix client",
+    "build:server": "babel . -d dist --ignore client,node_modules",
+    "build:client": "npm run build --prefix client",
+    "install:client": "npm install --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build:server && npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5",
+    "morgan": "^1.9.1",
+    "shortid": "^2.2.15",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "nodemon": "^2.0.2"
+  }
+}
