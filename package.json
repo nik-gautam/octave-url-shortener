@@ -11,7 +11,7 @@
     "build:client": "npm run build --prefix client",
     "install:client": "npm install --prefix client",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client && npm run build:server"
   },
   "author": "",
   "license": "ISC",
@@ -22,13 +22,13 @@
     "mongoose": "^5.9.5",
     "morgan": "^1.9.1",
     "shortid": "^2.2.15",
-    "valid-url": "^1.0.9",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.0"
-  },
-  "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
     "nodemon": "^2.0.2"
   }
 }
