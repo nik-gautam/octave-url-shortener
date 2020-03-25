@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run build:server && node dist/server.js",
-    "dev:server": "nodemon server.js --exec babel-node --ignore client",
+    "dev:server": "nodemon server/server.js --exec babel-node --ignore client",
     "dev:client": "npm start --prefix client",
-    "build:server": "babel . -d dist --ignore client,node_modules",
+    "build:server": "babel server -d dist",
     "build:client": "npm run build --prefix client",
     "install:client": "npm install --prefix client",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
