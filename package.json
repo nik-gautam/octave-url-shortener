@@ -4,7 +4,7 @@
   "description": "URL shortener",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build:server && node dist/server.js",
+    "start": "node dist/server.js",
     "dev:server": "nodemon server/server.js --exec babel-node --ignore client",
     "dev:client": "npm start --prefix client",
     "build:server": "babel server -d dist",
